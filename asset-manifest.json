@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/to_do_list_react/static/css/main.93ffbc3e.chunk.css",
-    "main.js": "/to_do_list_react/static/js/main.ec4b3593.chunk.js",
-    "main.js.map": "/to_do_list_react/static/js/main.ec4b3593.chunk.js.map",
-    "runtime-main.js": "/to_do_list_react/static/js/runtime-main.2e24b47e.js",
-    "runtime-main.js.map": "/to_do_list_react/static/js/runtime-main.2e24b47e.js.map",
-    "static/js/2.64f9cecb.chunk.js": "/to_do_list_react/static/js/2.64f9cecb.chunk.js",
-    "static/js/2.64f9cecb.chunk.js.map": "/to_do_list_react/static/js/2.64f9cecb.chunk.js.map",
-    "static/js/3.04545ed2.chunk.js": "/to_do_list_react/static/js/3.04545ed2.chunk.js",
-    "static/js/3.04545ed2.chunk.js.map": "/to_do_list_react/static/js/3.04545ed2.chunk.js.map",
+    "main.css": "/to_do_list_react/static/css/main.b3a46add.chunk.css",
+    "main.js": "/to_do_list_react/static/js/main.1cedb920.chunk.js",
+    "main.js.map": "/to_do_list_react/static/js/main.1cedb920.chunk.js.map",
+    "runtime-main.js": "/to_do_list_react/static/js/runtime-main.4c893082.js",
+    "runtime-main.js.map": "/to_do_list_react/static/js/runtime-main.4c893082.js.map",
+    "static/js/2.65b9e8c2.chunk.js": "/to_do_list_react/static/js/2.65b9e8c2.chunk.js",
+    "static/js/2.65b9e8c2.chunk.js.map": "/to_do_list_react/static/js/2.65b9e8c2.chunk.js.map",
+    "static/js/3.cbc076fb.chunk.js": "/to_do_list_react/static/js/3.cbc076fb.chunk.js",
+    "static/js/3.cbc076fb.chunk.js.map": "/to_do_list_react/static/js/3.cbc076fb.chunk.js.map",
     "index.html": "/to_do_list_react/index.html",
-    "static/css/main.93ffbc3e.chunk.css.map": "/to_do_list_react/static/css/main.93ffbc3e.chunk.css.map",
-    "static/js/2.64f9cecb.chunk.js.LICENSE.txt": "/to_do_list_react/static/js/2.64f9cecb.chunk.js.LICENSE.txt",
-    "static/media/App.scss": "/to_do_list_react/static/media/check-hover.5e00062b.svg"
+    "static/css/main.b3a46add.chunk.css.map": "/to_do_list_react/static/css/main.b3a46add.chunk.css.map",
+    "static/js/2.65b9e8c2.chunk.js.LICENSE.txt": "/to_do_list_react/static/js/2.65b9e8c2.chunk.js.LICENSE.txt",
+    "static/media/App.scss": "/to_do_list_react/static/media/check-hover.f1b1bcfd.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.2e24b47e.js",
-    "static/js/2.64f9cecb.chunk.js",
-    "static/css/main.93ffbc3e.chunk.css",
-    "static/js/main.ec4b3593.chunk.js"
+    "static/js/runtime-main.4c893082.js",
+    "static/js/2.65b9e8c2.chunk.js",
+    "static/css/main.b3a46add.chunk.css",
+    "static/js/main.1cedb920.chunk.js"
   ]
 }
