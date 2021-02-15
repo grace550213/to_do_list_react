@@ -1,22 +1,23 @@
-import TodosItem from "./TodosItem";
+import TodosItem from './TodosItem';
+import { connect } from 'react-redux';
 
 const Todos = ({
-  todos,
-  handleFinishTodos,
-  handleEditTodos,
-  handleDeleteTodos,
-  handleUpdateNewTitle
+  todos
+  // handleFinishTodos,
+  // handleEditTodos,
+  // handleDeleteTodos,
+  // handleUpdateNewTitle
 }) => {
   return (
     <div className="todos">
-      {todos.map(item => {
+      {todos.map((item) => {
         return (
           <TodosItem
             todosItem={item}
-            handleFinishTodos={handleFinishTodos}
-            handleEditTodos={handleEditTodos}
-            handleDeleteTodos={handleDeleteTodos}
-            handleUpdateNewTitle={handleUpdateNewTitle}
+            // handleFinishTodos={handleFinishTodos}
+            // handleEditTodos={handleEditTodos}
+            // handleDeleteTodos={handleDeleteTodos}
+            // handleUpdateNewTitle={handleUpdateNewTitle}
             key={item.id}
           />
         );
@@ -25,4 +26,11 @@ const Todos = ({
   );
 };
 
-export default Todos;
+const mapStateToProps = (state) => {
+  return {
+    todos: state.todos
+  };
+};
+
+export default connect(mapStateToProps)(Todos);
+// export default Todos;

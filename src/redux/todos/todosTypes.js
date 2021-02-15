@@ -1,0 +1,6 @@
+export const ADD_TODOS = 'ADD_TODOS'
+export const DELETE_DONE_TODOS = 'DELETE_DONE_TODOS'
+export const FINISH_TODOS = 'FINISH_TODOS'
+export const EDIT_TODOS = 'EDIT_TODOS'
+export const DELETE_TODOS = 'DELETE_TODOS'
+export const UPDATE_NEW_TITLE = 'UPDATE_NEW_TITLE'

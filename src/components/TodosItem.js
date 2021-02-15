@@ -1,61 +1,70 @@
-import clsx from "clsx";
-import { useState } from "react";
+import clsx from 'clsx';
+import { useState } from 'react';
+import { connect } from 'react-redux';
+import { finishTodos, editTodos, deleteTodos, updateNewTitle } from '../redux';
 
 const TodosItem = ({
   todosItem,
-  handleFinishTodos,
-  handleEditTodos,
-  handleDeleteTodos,
-  handleUpdateNewTitle
+  finishTodos,
+  editTodos,
+  deleteTodos,
+  updateNewTitle
+  // handleFinishTodos,
+  // handleEditTodos,
+  // handleDeleteTodos,
+  // handleUpdateNewTitle
 }) => {
-  const [newTodosTitle, setNewTodosTitle] = useState("");
+  const [newTodosTitle, setNewTodosTitle] = useState('');
   // 預先判斷是真的要刪除此筆 todos 還是只是從編輯狀態還原成檢視狀態
   const handleconfirmDelete = (id, isEditing) => {
     if (isEditing) {
-      handleEditTodos(id, false);
+      editTodos({ id, status: false });
+      // handleEditTodos(id, false);
       return;
     }
-    handleDeleteTodos(id);
+    deleteTodos(id);
+    // handleDeleteTodos(id);
   };
   // 預先判斷是否完成，若已完成，則不能編輯
   const handleConfirmEdit = (id, isDone) => {
     if (isDone) {
       return;
     }
-    handleEditTodos(id, true);
+    editTodos({ id, status: true });
+    // handleEditTodos(id, true);
   };
   // 改變"編輯 todos input"的文字
-  const handleChangeInput = e => {
+  const handleChangeInput = (e) => {
     setNewTodosTitle(e.target.value);
   };
   // 若按下的為 enter 鍵，則更新新的 todos 的 title
-  const handleConfirmNewTitle = event => {
+  const handleConfirmNewTitle = (event) => {
     // console.log(event.key);
     // console.log(todosItem.id, newTodosTitle);
-    if (event.key === "Enter" && newTodosTitle === "") {
-      alert("您未輸入文字");
-    } else if (event.key === "Enter") {
-      handleUpdateNewTitle(todosItem.id, newTodosTitle);
+    if (event.key === 'Enter' && newTodosTitle === '') {
+      alert('您未輸入文字');
+    } else if (event.key === 'Enter') {
+      updateNewTitle({ id: todosItem.id, title: newTodosTitle });
+      // handleUpdateNewTitle(todosItem.id, newTodosTitle);
     }
   };
   // 預先確認使用者是否在編輯狀態
   const handleConfirmFinish = (id, newIsDone, isEditing) => {
     if (isEditing) {
-      alert("您在編輯狀態，無法勾選完成");
+      alert('您在編輯狀態，無法勾選完成');
       return;
     }
-    handleFinishTodos(id, newIsDone);
+    finishTodos({ id, status: newIsDone });
+    // handleFinishTodos(id, newIsDone);
   };
-
   return (
     <div
       className={clsx(
-        "task-item",
+        'task-item',
         { done: todosItem.isDone },
         { edit: todosItem.isEditing }
       )}
-      onDoubleClick={() => handleConfirmEdit(todosItem.id, todosItem.isDone)}
-    >
+      onDoubleClick={() => handleConfirmEdit(todosItem.id, todosItem.isDone)}>
       <div
         className="task-item-checked"
         onClick={() =>
@@ -64,8 +73,7 @@ const TodosItem = ({
             !todosItem.isDone,
             todosItem.isEditing
           )
-        }
-      >
+        }>
         <span className="icon icon-checked"></span>
       </div>
       <div className="task-item-body">
@@ -81,12 +89,27 @@ const TodosItem = ({
       </div>
       <div
         className="task-item-action"
-        onClick={() => handleconfirmDelete(todosItem.id, todosItem.isEditing)}
-      >
+        onClick={() => handleconfirmDelete(todosItem.id, todosItem.isEditing)}>
         <button className="btn-reset btn-destroy icon"> </button>
       </div>
     </div>
   );
 };
 
-export default TodosItem;
+const mapStateToProps = (state) => {
+  return {
+    todos: state.todos
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    finishTodos: (data) => dispatch(finishTodos(data)),
+    editTodos: (data) => dispatch(editTodos(data)),
+    deleteTodos: (id) => dispatch(deleteTodos(id)),
+    updateNewTitle: (data) => dispatch(updateNewTitle(data))
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(TodosItem);
+// export default TodosItem;
