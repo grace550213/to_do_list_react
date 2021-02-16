@@ -1,12 +1,8 @@
-import { combineReducers } from 'redux'
-import todosReducer from './todos/todosReducer'
-// import iceCreamReducer from './iceCream/iceCreamReducer'
-// import userReducer from './user/userReducer'
+import { combineReducers } from 'redux';
+import todosReducer from './todos/todosReducer';
 
 const rootReducer = combineReducers({
-  todos: todosReducer,
-  // iceCream: iceCreamReducer,
-  // user: userReducer
-})
+  todos: todosReducer
+});
 
-export default rootReducer
+export default rootReducer;

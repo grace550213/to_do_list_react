@@ -5,8 +5,6 @@ import AddTodos from './components/AddTodos';
 import Footer from './components/Footer';
 // import { v4 as uuidv4 } from 'uuid';
 import { useState } from 'react';
-// import { Provider } from 'react-redux';
-// import store from './redux/store';
 import { connect } from 'react-redux';
 
 // const defaultTodos = [
@@ -97,26 +95,24 @@ function App({ todos }) {
   // };
 
   return (
-    // <Provider store={store}>
-      <div className="app">
-        {/* <Headers handleDeleteDoneTodos={handleDeleteDoneTodos} /> */}
-        <Headers />
-        <AddTodos
-          inputValue={inputValue}
-          setInputValue={setInputValue}
-          handleChangeInput={handleChangeInput}
-          // handleAddTodos={handleAddTodos}
-        />
-        <Todos
-        // todos={todos}
-        // handleFinishTodos={handleFinishTodos}
-        // handleEditTodos={handleEditTodos}
-        // handleDeleteTodos={handleDeleteTodos}
-        // handleUpdateNewTitle={handleUpdateNewTitle}
-        />
-        <Footer numberOfRemaining={numberOfRemaining} />
-      </div>
-    // </Provider>
+    <div className="app">
+      {/* <Headers handleDeleteDoneTodos={handleDeleteDoneTodos} /> */}
+      <Headers />
+      <AddTodos
+        inputValue={inputValue}
+        setInputValue={setInputValue}
+        handleChangeInput={handleChangeInput}
+        // handleAddTodos={handleAddTodos}
+      />
+      <Todos
+      // todos={todos}
+      // handleFinishTodos={handleFinishTodos}
+      // handleEditTodos={handleEditTodos}
+      // handleDeleteTodos={handleDeleteTodos}
+      // handleUpdateNewTitle={handleUpdateNewTitle}
+      />
+      <Footer numberOfRemaining={numberOfRemaining} />
+    </div>
   );
 }
 
