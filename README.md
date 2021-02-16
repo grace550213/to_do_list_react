@@ -1,6 +1,6 @@
 # todolist demo
 
-簡單的 todolist 練習(其中一個分支有使用 react-redux)
+簡單的 todolist 練習(使用 react-redux)
 
 ## 新增 todos 項目
 
